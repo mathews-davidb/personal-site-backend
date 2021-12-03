@@ -25,6 +25,10 @@ transport.verify(function (error, success) {
   }
 });
 
+server.get("/health", (req, res) => {
+  res.send({ message: "Server is working" });
+});
+
 server.post("/send", async (req, res, next) => {
   console.log(req.body.name, req.body.message);
 
