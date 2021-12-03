@@ -3,7 +3,7 @@ const express = require("express");
 const server = express();
 require("dotenv").config();
 const nodemailer = require("nodemailer");
-const google = require("googleapis");
+const { google } = require("googleapis");
 
 server.use(cors());
 server.use(express.json());
@@ -15,7 +15,7 @@ const REDIRECT_URI = "https://developers.google.com/oauthplayground";
 const REFRESH_TOKEN =
   "1//04pwjO-DCmPqlCgYIARAAGAQSNwF-L9IrExmlM8wWp8p6WMiteifHX2_OJBp0JTAXmf0Nav5HV-XLNnVf2Shjkh1ASHn_gAXO8ko";
 
-const oAuth2Client = new google.auth.oAuth2(
+const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
   CLIENT_SECRET,
   REDIRECT_URI
