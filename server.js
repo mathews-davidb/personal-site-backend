@@ -30,7 +30,7 @@ let transport = nodemailer.createTransport({
   // service: "gmail",
   auth: {
     type: "OAuth2",
-    user: "process.env.EMAIL_USERNAME",
+    user: process.env.EMAIL_USERNAME,
     clientId: CLIENT_ID,
     clientSecret: CLIENT_SECRET,
     refreshToken: REFRESH_TOKEN,
